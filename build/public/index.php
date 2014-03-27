@@ -109,6 +109,7 @@ if (isset($_GET["enquiry"])) {
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/overrides.css">
         <script src="/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -137,7 +138,7 @@ if (isset($_GET["enquiry"])) {
         print $use_by_date;
         print $batch_code;
         print $enquiry;
-        print '<a href="/" class="btn right">OK, got it now leave this page!</a>';
+        print '<a href="/">OK, got it now leave this page!</a>';
         print '</div>';
         print '<div class="overlay">';
         print '</div>';
@@ -239,7 +240,7 @@ if (isset($_GET["enquiry"])) {
 
         <div class="form-element">
           <label for="enquiry">Enquiry: </label>
-          <textarea name="enquiry" rows="4" cols="50"></textarea>
+          <textarea name="enquiry" id="enquiry" rows="4" cols="50"></textarea>
         </div>
 
         <input type="submit" class="btn right" value="SUBMIT">
@@ -250,29 +251,13 @@ if (isset($_GET["enquiry"])) {
     </form>
   </div>
   <!-- /.content -->
-<script>
-  document.getElementById("enquiry_type").onchange = function() {
-  document.getElementById("complaint").style.display = (this.value == "value3") ? "block":"none";
-  };
-
-  function SelectHasValue(select, value) {
-    obj = document.getElementById(enquiry_type);
-
-    if (obj !== null) {
-      return (obj.innerHTML.indexOf('value="' + value + '"') > -1);
-    } else {
-      return false;
-    }
-  }
-</script>
-
         <!-- For local development, use this script line along with "grunt dev" to load modules asynchronously -->
         <!--<script data-main="/js/main.js" src="/js/vendor/require.js"></script>-->
 
         <!-- In production, use this script line along with "grunt" (the default task does a production build) to
              concatenate and minify all javascript sources into one file -->
         <script src="/js/main.js"></script>
-
+        <script src="/js/verify.js"></script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -280,7 +265,7 @@ if (isset($_GET["enquiry"])) {
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
+            ga('create','UA-27321432-5');ga('send','pageview');
         </script>
     </body>
 </html>

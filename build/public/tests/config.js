@@ -3,7 +3,7 @@
         "facebookId": "000000000000000",
 
         "local": {
-            "env": [/DEV URL OR PART OF/]
+            "env": ["monkeybones"]
         },
         "stage": {
             "env": [/STAGE URL OR PART OF/],
@@ -29,12 +29,8 @@
                 "url": "../"
             },
             {
-                "url": "core/demo/index.html",
-                "tests": [ "page/has_facebook_appid.js" ]
-            },
-            {
-                "url": "core/demo/index.html?pretendIsAnotherPage=true",
-                "tests": [ "page/has_facebook_appid.js", "page/demo_page_test.js" ]
+                "url": "index.php",
+                "tests": [ "page/demo_page_test.js" ]
             }
         ],
         "proxyUrl": "core/proxy.php?mode=native&url=<%= url %>",
